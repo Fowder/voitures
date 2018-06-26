@@ -1,0 +1,66 @@
+h1, td {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+label {
+    color: white !important;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #222222;
+}
+
+h2.uk-text-center {
+    color:white;
+}
+
+.margin {
+    margin-bottom: 30px;
+}
+
+.valider {
+    margin-bottom: 30px;
+}
+
+nav {
+    background-color: #222222 !important;
+}
+.uk-active a {
+    color:white !important;
+}
+
+.white-text {
+    color: white;
+}
+
+#content-ajax {
+    position: absolute;
+    width: 100%;
+}
+
+.red {
+    color:red;
+}
+
+.white {
+    color: white;
+}
+
+.uk-card.uk-card-default.uk-card-body {
+    background-color: #333333;
+    color: white;
+}
+
+legend {
+    color: white !important;
+}
+
+.uk-label {
+    color: black;
+}
+
+.uk-card.uk-card-secondary.uk-grid-collapse.uk-margin {
+    box-shadow: 0 0 0 0;
+}

@@ -48,6 +48,14 @@ nav {
     color: white;
 }
 
+th {
+    color: #39f !important;
+}
+
+td a {
+    color: grey !important;
+}
+
 .uk-card.uk-card-default.uk-card-body {
     background-color: #333333;
     color: white;

@@ -8,7 +8,7 @@
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css" />
     <link rel="stylesheet" href="/voitures/css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet"> 
     <?php 
     session_start();
     include 'bdd.php'; ?>

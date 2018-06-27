@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Mar 26 Juin 2018 à 15:59
+-- Généré le :  Mer 27 Juin 2018 à 15:14
 -- Version du serveur :  5.7.22-0ubuntu0.17.10.1
 -- Version de PHP :  7.1.17-0ubuntu0.17.10.1
 
@@ -65,7 +65,8 @@ CREATE TABLE `favoris` (
 INSERT INTO `favoris` (`id_favoris`, `id_user`, `id_voiture`, `date`) VALUES
 (78, 2, 8, '2018-06-26 07:57:45'),
 (79, 2, 2, '2018-06-26 07:57:49'),
-(80, 2, 4, '2018-06-26 07:57:53');
+(80, 2, 4, '2018-06-26 07:57:53'),
+(81, 1, 6, '2018-06-27 12:22:19');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,8 @@ INSERT INTO `marque` (`id_marque`, `nom`) VALUES
 (11, 'Honda'),
 (12, 'Bugatti'),
 (13, 'Koenigsegg'),
-(14, 'Porsche');
+(14, 'Porsche'),
+(15, 'Renault');
 
 -- --------------------------------------------------------
 
@@ -122,7 +124,8 @@ INSERT INTO `type` (`id_type`, `classe`) VALUES
 (6, 'Luxe'),
 (7, '4x4'),
 (8, 'Hypercar'),
-(9, 'Break');
+(9, 'Break'),
+(10, 'Coupé');
 
 -- --------------------------------------------------------
 
@@ -144,8 +147,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `admin`, `cars`) VALUES
-(1, 'Fowder', 'emile.troccaz@hotmail.com', 'Foudre46', 1, 43),
-(2, 'Test', 'pokevend@gmail.com', 'Test', 0, 14);
+(1, 'Fowder', 'emile.troccaz@hotmail.com', 'Foudre46', 1, 65),
+(2, 'Test', 'pokevend@gmail.com', 'Test', 0, 43);
 
 -- --------------------------------------------------------
 
@@ -212,11 +215,33 @@ INSERT INTO `voiture` (`id`, `modele`, `annee`, `puissance`, `poids`, `image`, `
 (39, 'GTC4 Lusso', 2016, 611, 1865, 'gt4clusso.jpg', 320, 3.5, 0, 265, 1, 4, '2018-06-26 13:22:45'),
 (40, 'Portofino', 2018, 600, 1664, 'portofino.jpg', 320, 3.5, 0, 245, 1, 4, '2018-06-26 13:24:06'),
 (41, 'Testarossa', 1984, 370, 1505, '512tr.jpg', 292, 5.6, 0, 0, 1, 4, '2018-06-26 13:27:24'),
-(42, 'Boxster 718', 2016, 300, 1410, 'boxster718.jpg', 275, 5.1, 6, 168, 14, 3, '2018-06-26 13:33:33'),
+(42, '718 Boxster', 2016, 300, 1410, 'boxster718.jpg', 275, 5.1, 6, 168, 14, 3, '2018-06-27 07:46:06'),
 (43, '718 Cayman', 2016, 300, 1410, '718cayman.jpg', 275, 5.1, 6, 168, 14, 4, '2018-06-26 13:35:42'),
 (44, '911 (996)', 1998, 300, 1395, '911996.jpg', 280, 5.4, 8.5, 0, 14, 4, '2018-06-26 13:42:00'),
 (45, '911 (997)', 2005, 345, 1470, '911997.jpg', 284, 5, 7.4, 249, 14, 4, '2018-06-26 13:41:46'),
-(46, '911 (991)', 2013, 350, 1455, '911991.jpg', 289, 4.8, 6.8, 212, 14, 4, '2018-06-26 13:44:08');
+(46, '911 (991)', 2011, 350, 1455, '911991.jpg', 289, 4.8, 6.8, 212, 14, 4, '2018-06-27 07:44:35'),
+(47, 'Boxster', 2002, 228, 1330, 'boxster2002.jpg', 248, 7.3, 7.9, 0, 14, 3, '2018-06-27 07:48:43'),
+(48, 'Boxster (Phase II)', 2005, 256, 1335, 'boxster2005.jpg', 263, 5.9, 6.9, 221, 14, 3, '2018-06-27 07:55:20'),
+(49, 'Boxster (Phase III)', 2012, 265, 1405, 'boxster2012.jpg', 264, 5.8, 6.4, 195, 14, 3, '2018-06-27 07:58:39'),
+(50, 'Carrera GT', 2003, 612, 1455, 'carreragt.jpg', 330, 3.9, 11.7, 429, 14, 4, '2018-06-27 08:02:13'),
+(51, 'Cayenne', 2002, 500, 2170, 'cayenne2002.jpg', 278, 4.7, 0, 270, 14, 7, '2018-06-27 08:59:25'),
+(52, 'Cayenne (Phase II)', 2007, 290, 2160, 'cayenne2007.jpg', 227, 8.1, 9.3, 296, 14, 7, '2018-06-27 09:01:34'),
+(53, 'Cayenne (Phase III)', 2011, 239, 2100, 'cayenne2011.jpg', 218, 7.8, 6.6, 195, 14, 7, '2018-06-27 09:04:05'),
+(54, 'Cayenne (Phase IV)', 2015, 262, 2185, 'cayenne2015.jpg', 221, 7.3, 6, 179, 14, 7, '2018-06-27 09:07:32'),
+(55, 'Cayenne (Phase V)', 2017, 440, 2095, 'cayenne2017.jpg', 265, 5.2, 8, 209, 14, 7, '2018-06-27 09:10:29'),
+(56, 'Cayman', 2007, 245, 1330, 'cayman2007.jpg', 265, 5.8, 6.9, 221, 14, 10, '2018-06-27 11:36:19'),
+(57, 'Cayman (Phase II)', 20014, 275, 1405, 'cayman2014.jpg', 266, 5.7, 6.4, 195, 14, 10, '2018-06-27 11:47:13'),
+(58, 'Macan', 2015, 340, 1940, 'macan2015.jpg', 254, 5.4, 7.3, 212, 14, 7, '2018-06-27 11:50:34'),
+(59, 'Panamera', 2009, 400, 1935, 'panamera2009.jpg', 282, 5, 7.9, 260, 14, 2, '2018-06-27 11:54:22'),
+(60, 'Panamera (Phase II)', 2017, 330, 1925, 'panamera2017.jpg', 262, 5.5, 6.4, 175, 14, 2, '2018-06-27 11:56:54'),
+(61, 'Alaskan', 2017, 160, 2000, 'alaskan2017.jpg', 172, 0, 6.1, 167, 15, 7, '2018-06-27 12:27:16'),
+(62, 'Avantime', 2001, 210, 1741, 'avantime2001.jpg', 220, 8.6, 8.9, 0, 15, 9, '2018-06-27 12:29:37'),
+(63, 'Captur', 2013, 90, 1101, 'captur2013.jpg', 171, 12.9, 4.3, 113, 15, 7, '2018-06-27 12:31:56'),
+(64, 'Clio II', 1998, 60, 955, 'clio1998.jpg', 160, 15, 5.2, 0, 15, 1, '2018-06-27 12:36:30'),
+(65, 'Clio III', 2005, 75, 930, 'clio2005.jpg', 170, 13, 4.9, 0, 15, 1, '2018-06-27 12:39:35'),
+(66, 'Clio IV', 2013, 75, 1090, 'clio2013.jpg', 167, 13.4, 4.9, 130, 15, 1, '2018-06-27 12:41:51'),
+(67, 'Espace III', 2000, 100, 1520, 'espace2000.jpg', 167, 15, 5.7, 0, 15, 9, '2018-06-27 13:06:55'),
+(68, 'Espace IV', 2002, 116, 1755, 'epsace2002.jpg', 180, 13.2, 6, 187, 15, 9, '2018-06-27 13:08:07');
 
 --
 -- Index pour les tables exportées
@@ -275,17 +300,17 @@ ALTER TABLE `conso`
 -- AUTO_INCREMENT pour la table `favoris`
 --
 ALTER TABLE `favoris`
-  MODIFY `id_favoris` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id_favoris` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT pour la table `marque`
 --
 ALTER TABLE `marque`
-  MODIFY `id_marque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_marque` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `type`
 --
 ALTER TABLE `type`
-  MODIFY `id_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
@@ -295,7 +320,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `voiture`
 --
 ALTER TABLE `voiture`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 --
 -- Contraintes pour les tables exportées
 --

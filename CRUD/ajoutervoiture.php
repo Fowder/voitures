@@ -130,20 +130,20 @@ include '../content/head.php';
                     <select name="type" class="uk-select" id="form-horizontal-select">
                         <?php 
                         if(isset($_GET['id'])){
-                            $sqltype = $bdd->query('SELECT id_type FROM type, voiture WHERE voiture.type = type.id_type AND voiture.id = '.$fetchid['id'].'');
+                            $sqltype = $bdd->query('SELECT id_type, classe FROM type, voiture WHERE voiture.type = type.id_type AND voiture.id = '.$fetchid['id'].'');
                             $fetchtype = $sqltype->fetch();
                         }else{
                             echo '<option value="none">Choisir une type</option>';
                         }
 
                         if(isset($_GET['id']) && $fetchid['id'] == $_GET['id']){
-                            echo '<option value="'.$fetchtype['id_type'].'">'.$fetchid['nom'].'</option>';
+                            echo '<option value="'.$fetchtype['id_type'].'">'.$fetchtype['classe'].'</option>';
                         }
 
                         $sql = $bdd->query('SELECT * FROM type ORDER BY classe');
 
                         while($voiture = $sql->fetch()){
-                            if($fetchid['nom'] != $voiture['classe']){
+                            if($fetchtype['classe'] != $voiture['classe']){
                                 echo '<option value="'.$voiture['id_type'].'">'.$voiture['classe'].'</option>';
                             }
                         }
